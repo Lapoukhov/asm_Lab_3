@@ -1,30 +1,30 @@
 org 100h
 
 EntryPoint:
-        mov ah, $09           ;Вывод текста
+        mov ah, $09           ;Р’С‹РІРѕРґ С‚РµРєСЃС‚Р°
         mov dx, strA
         int 21h
 
-        mov ah, $09           ;переход
+        mov ah, $09           ;РїРµСЂРµС…РѕРґ
         mov dx, strNext
         int 21h
 
-        mov ah, $09           ;Вывод текста
+        mov ah, $09           ;Р’С‹РІРѕРґ С‚РµРєСЃС‚Р°
         mov dx, sB
         int 21h
 
-        mov ah, $09           ;Вывод текста
+        mov ah, $09           ;Р’С‹РІРѕРґ С‚РµРєСЃС‚Р°
         mov dx, stroka
         int 21h
 
         cld
         mov bl, [strA+1]
         lea di, [strA]
-        mov dl, [sB+2]        ;подстрока
+        mov dl, [sB+2]        ;РїРѕРґСЃС‚СЂРѕРєР°
 
 Poisk:
-        mov al, dl            ;Поиск
-        repne scasb           ;пока не равно или не 0
+        mov al, dl            ;РџРѕРёСЃРє
+        repne scasb           ;РїРѕРєР° РЅРµ СЂР°РІРЅРѕ РёР»Рё РЅРµ 0
         jnz NO
         cmp dl, 2
 
